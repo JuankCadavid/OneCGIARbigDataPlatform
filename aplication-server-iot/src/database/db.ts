@@ -34,12 +34,12 @@ export class Database {
                 type: `postgres`,
                 port: 5432,
                 synchronize: false,
-                host: 'aliadago.ctwnnpfxxzig.us-east-1.rds.amazonaws.com',
+                host: 'onecgiarbigdata.ctwnnpfxxzig.us-east-1.rds.amazonaws.com',
                 username: 'postgres',
-                database: 'postgres',
+                database: 'bigdata',
                 password: process.env.PASS2,
                 entities: [
-                    __dirname + "/entities/*.*"
+                    "dist/entities/pg/**/*.js"
                 ]
             }
 

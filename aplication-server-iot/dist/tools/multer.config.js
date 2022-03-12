@@ -3,8 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const climate_1 = __importDefault(require("./climate"));
-const Routes = (0, express_1.Router)();
-Routes.use('/weather', climate_1.default);
-exports.default = Routes;
+const multer_1 = __importDefault(require("multer"));
+var storage = multer_1.default.memoryStorage();
+var upload = (0, multer_1.default)({ storage: storage });
+exports.default = upload;

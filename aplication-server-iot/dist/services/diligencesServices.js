@@ -9,26 +9,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DiligencesServices = void 0;
 const db_1 = require("../database/db");
 class DiligencesServices {
-    requestDiligences() {
+    /**
+     * REQUEST DILIGENCES REGISTERED
+     * @param city_id
+     * @param vehicle_type_id
+     * @param base
+     * @returns diligences
+     */
+    requestWeatherInformation() {
         return __awaiter(this, void 0, void 0, function* () {
             let database = new db_1.Database();
             let dbConn = yield database.getConnection();
-            console.log("database is connected", dbConn.isConnected);
-            let dbStatus = "database is connected" + " " + dbConn.isConnected;
+            const range = process.env.RANGE;
             try {
                 const queryRunner = dbConn.createQueryRunner();
                 yield queryRunner.connect();
-                const diligences = yield queryRunner.query(`SELECT * FROM diligence WHERE state = 'ON_ROUTE'`);
+                const weather = yield queryRunner.query(`
+      SELECT * FROM climatic_information
+       ORDER BY id ASC `);
                 yield queryRunner.release();
-                return { dbStatus, diligences };
+                return weather;
             }
             catch (error) {
-                return { message: "Diligences not found " + error };
+                return { message: "weather information" + error };
             }
         });
     }
 }
-exports.DiligencesServices = DiligencesServices;
+const diligencesservices = new DiligencesServices();
+exports.default = diligencesservices;

@@ -1,10 +1,8 @@
 import {Router} from "express";
-import diligences from "./diligences";
-import products from "./products";
+import climate from "./climate";
 
 const Routes = Router();
 
-Routes.use('/products',products);
-Routes.use('/diligences',diligences);
+Routes.use('/weather',climate);
 
 export default Routes;
