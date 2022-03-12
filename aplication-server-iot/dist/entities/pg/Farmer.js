@@ -24,43 +24,43 @@ const class_validator_1 = require("class-validator");
 let Farmer = class Farmer extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], Farmer.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 500),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 500),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Farmer.prototype, "firstname", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 500),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 500),
     __metadata("design:type", String)
 ], Farmer.prototype, "lastname", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 100),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 100),
     __metadata("design:type", String)
 ], Farmer.prototype, "document", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 50),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 50),
     __metadata("design:type", String)
 ], Farmer.prototype, "phone_number", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], Farmer.prototype, "validater", null);
 Farmer = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Farmer);
 exports.Farmer = Farmer;

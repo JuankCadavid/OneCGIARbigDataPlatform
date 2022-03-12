@@ -18,6 +18,6 @@ let UserShippingAddressesRepository = class UserShippingAddressesRepository exte
     }
 };
 UserShippingAddressesRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(ShippingAdressesSecondaries_1.customerAddress)
+    typeorm_1.EntityRepository(ShippingAdressesSecondaries_1.customerAddress)
 ], UserShippingAddressesRepository);
 exports.UserShippingAddressesRepository = UserShippingAddressesRepository;

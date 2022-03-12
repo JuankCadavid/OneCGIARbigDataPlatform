@@ -15,6 +15,6 @@ let UserShippingRepository = class UserShippingRepository extends typeorm_1.Repo
     }
 };
 UserShippingRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(ShippingUser_1.ShippingUser)
+    typeorm_1.EntityRepository(ShippingUser_1.ShippingUser)
 ], UserShippingRepository);
 exports.UserShippingRepository = UserShippingRepository;

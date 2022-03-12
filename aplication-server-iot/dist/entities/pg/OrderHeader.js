@@ -24,75 +24,75 @@ const class_validator_1 = require("class-validator");
 let OrderHeader = class OrderHeader extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], OrderHeader.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsDate)(),
+    typeorm_1.Column(),
+    class_validator_1.IsDate(),
     __metadata("design:type", Date)
 ], OrderHeader.prototype, "date", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "name_client", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "id_client", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "state", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "cash_on_delivery", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], OrderHeader.prototype, "shipping_cost", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], OrderHeader.prototype, "cost_only_purchase", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], OrderHeader.prototype, "selling_cost", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Boolean)
 ], OrderHeader.prototype, "tracing", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "delivery_day", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderHeader.prototype, "delivery_time", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], OrderHeader.prototype, "validater", null);
 OrderHeader = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], OrderHeader);
 exports.OrderHeader = OrderHeader;

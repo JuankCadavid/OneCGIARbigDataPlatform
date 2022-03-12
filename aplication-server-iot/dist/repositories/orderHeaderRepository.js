@@ -15,6 +15,6 @@ let OrderHeaderRepository = class OrderHeaderRepository extends typeorm_1.Reposi
     }
 };
 OrderHeaderRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(OrderHeader_1.OrderHeader)
+    typeorm_1.EntityRepository(OrderHeader_1.OrderHeader)
 ], OrderHeaderRepository);
 exports.OrderHeaderRepository = OrderHeaderRepository;

@@ -24,106 +24,106 @@ const class_validator_1 = require("class-validator");
 let Products = class Products extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], Products.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(5, 10),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(5, 10),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Products.prototype, "reference", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 50),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 50),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Products.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Min)(0),
-    (0, class_validator_1.Max)(20),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Min(0),
+    class_validator_1.Max(20),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Number)
 ], Products.prototype, "idcategory", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    (0, class_validator_1.Min)(1),
-    (0, class_validator_1.Max)(100000),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column({ nullable: true }),
+    class_validator_1.Min(1),
+    class_validator_1.Max(100000),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Number)
 ], Products.prototype, "price", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    (0, class_validator_1.IsInt)(),
-    (0, class_validator_1.Min)(0),
-    (0, class_validator_1.Max)(1000000),
+    typeorm_1.Column({ nullable: true }),
+    class_validator_1.IsInt(),
+    class_validator_1.Min(0),
+    class_validator_1.Max(1000000),
     __metadata("design:type", Number)
 ], Products.prototype, "quantity", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 30),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 30),
     __metadata("design:type", String)
 ], Products.prototype, "barcode", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 10),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 10),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Products.prototype, "units", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "promo", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "state", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Products.prototype, "cost", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "maturation", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "units_per_pound", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "tip", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Products.prototype, "price_by_quantity", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "sub_category", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "sub_category_two", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Products.prototype, "discount", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], Products.prototype, "validater", null);
 Products = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Products);
 exports.Products = Products;

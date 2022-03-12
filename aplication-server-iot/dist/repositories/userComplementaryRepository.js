@@ -11,13 +11,13 @@ const typeorm_1 = require("typeorm");
 const complementaryUSer_1 = require("../entities/pg/complementaryUSer");
 let UserComplementaryRepository = class UserComplementaryRepository extends typeorm_1.Repository {
     findByEmail(email) {
-        return this.findOne({ where: { email: (0, typeorm_1.Like)(`%${email}%`) } });
+        return this.findOne({ where: { email: typeorm_1.Like(`%${email}%`) } });
     }
     findByUser(user) {
         return this.findOne({ where: { user_id: user } });
     }
 };
 UserComplementaryRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(complementaryUSer_1.ComplementaryUser)
+    typeorm_1.EntityRepository(complementaryUSer_1.ComplementaryUser)
 ], UserComplementaryRepository);
 exports.UserComplementaryRepository = UserComplementaryRepository;

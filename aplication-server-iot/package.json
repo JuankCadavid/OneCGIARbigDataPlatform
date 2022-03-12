@@ -1,11 +1,12 @@
 {
-  "name": "aliada_delivery",
+  "name": "app-server-iot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "tsc -W",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js \""
+    "dev": "tsc-watch --onSuccess \"node dist/index.js \"",
+    "docker:build": "docker build -t ciatback .",
+    "docker:run": "docker run -dti --name ciatapi -p 3000:3000 --link mysqlciat:mysql ciatback"
   },
   "dependencies": {
     "@types/node": "^16.11.11",
@@ -24,6 +25,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
-    "tsc-watch": "^4.5.0"
+    "tsc-watch": "^4.6.2"
   }
 }

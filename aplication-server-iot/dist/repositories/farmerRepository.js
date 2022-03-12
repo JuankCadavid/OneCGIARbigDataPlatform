@@ -15,6 +15,6 @@ let FarmerRepository = class FarmerRepository extends typeorm_1.Repository {
     }
 };
 FarmerRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(Farmer_1.Farmer)
+    typeorm_1.EntityRepository(Farmer_1.Farmer)
 ], FarmerRepository);
 exports.FarmerRepository = FarmerRepository;

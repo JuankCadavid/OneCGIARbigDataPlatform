@@ -37,7 +37,7 @@ dotenv.config();
  */
 class Database {
     constructor() {
-        this.connectionManager = (0, typeorm_1.getConnectionManager)();
+        this.connectionManager = typeorm_1.getConnectionManager();
     }
     getConnection() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -71,7 +71,7 @@ class Database {
                         password: process.env.DB_PASSWORD
                     });
                 }
-                connection = yield (0, typeorm_1.createConnection)(connectionOptions);
+                connection = yield typeorm_1.createConnection(connectionOptions);
             }
             return connection;
         });

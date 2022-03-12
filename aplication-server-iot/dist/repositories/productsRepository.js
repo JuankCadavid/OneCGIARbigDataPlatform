@@ -11,7 +11,7 @@ const typeorm_1 = require("typeorm");
 const Products_1 = require("../entities/pg/Products");
 let ProductsRepository = class ProductsRepository extends typeorm_1.Repository {
     findByName(description) {
-        return this.find({ where: { description: (0, typeorm_1.Like)(`%${description}%`) } });
+        return this.find({ where: { description: typeorm_1.Like(`%${description}%`) } });
     }
     findByReference(reference) {
         return this.findOne({ where: { reference: reference } });
@@ -24,6 +24,6 @@ let ProductsRepository = class ProductsRepository extends typeorm_1.Repository {
     }
 };
 ProductsRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(Products_1.Products)
+    typeorm_1.EntityRepository(Products_1.Products)
 ], ProductsRepository);
 exports.ProductsRepository = ProductsRepository;

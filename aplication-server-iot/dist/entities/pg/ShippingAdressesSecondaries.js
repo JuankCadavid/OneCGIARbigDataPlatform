@@ -24,79 +24,79 @@ const class_validator_1 = require("class-validator");
 let customerAddress = class customerAddress extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], customerAddress.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 300),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 300),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], customerAddress.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 300),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 300),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], customerAddress.prototype, "street_type", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 300),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 300),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], customerAddress.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 100),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 100),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], customerAddress.prototype, "neighborhood", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Number)
 ], customerAddress.prototype, "city", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 1000),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 1000),
     __metadata("design:type", String)
 ], customerAddress.prototype, "comment", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Boolean)
 ], customerAddress.prototype, "state", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(1, 100),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(1, 100),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], customerAddress.prototype, "user_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], customerAddress.prototype, "complementary_user_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], customerAddress.prototype, "latitude", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], customerAddress.prototype, "longitude", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], customerAddress.prototype, "validater", null);
 customerAddress = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], customerAddress);
 exports.customerAddress = customerAddress;

@@ -1,32 +1,40 @@
-import { Request, Response } from "express";
-import {
-  Connection,
-} from "typeorm";
+import { Connection } from "typeorm";
 import { Database } from "../database/db";
 
-export class DiligencesServices {
 
-  async requestDiligences() {
-
+class DiligencesServices {
+  /**
+   * REQUEST DILIGENCES REGISTERED
+   * @param city_id
+   * @param vehicle_type_id
+   * @param base
+   * @returns diligences
+   */
+  public async requestActivitiesRegistered(
+  ) {
     let database = new Database();
     let dbConn: Connection = await database.getConnection();
+    const range: any = process.env.RANGE;
 
-    console.log("database is connected", dbConn.isConnected);
-
-    let dbStatus = "database is connected" + " " + dbConn.isConnected;
 
     try {
       const queryRunner = dbConn.createQueryRunner();
 
       await queryRunner.connect();
 
-      const diligences = await queryRunner.query(`SELECT * FROM diligence WHERE state = 'ON_ROUTE'`);
+      const activities = await queryRunner.query(`
+      SELECT * FROM activities`);
 
       await queryRunner.release();
 
-      return { dbStatus, diligences };
+      return { activities };
     } catch (error) {
-      return { message: "Diligences not found " + error };
+      return { message: "Activities Registered" + error };
     }
   }
+
+ 
 }
+
+const diligencesservices = new DiligencesServices();
+export default diligencesservices;

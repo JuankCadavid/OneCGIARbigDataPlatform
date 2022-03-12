@@ -18,6 +18,6 @@ let bonusRepository = class bonusRepository extends typeorm_1.Repository {
     }
 };
 bonusRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(Bonus_1.Bonus)
+    typeorm_1.EntityRepository(Bonus_1.Bonus)
 ], bonusRepository);
 exports.bonusRepository = bonusRepository;

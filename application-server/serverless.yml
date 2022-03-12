@@ -1,12 +1,11 @@
 org: juankcadavid
-app: applicationserverfarmer
-service: applicationserverfarmer
-frameworkVersion: '2 || 3'
+app: onecgiarserver
+service: app-server-farmer
+frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  lambdaHashingVersion: '20201221'
+  runtime: nodejs14.x
 
 functions:
   api:

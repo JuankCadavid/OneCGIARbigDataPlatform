@@ -24,69 +24,69 @@ const class_validator_1 = require("class-validator");
 let OrderBody = class OrderBody extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], OrderBody.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsInt)(),
+    typeorm_1.Column(),
+    class_validator_1.IsInt(),
     __metadata("design:type", Number)
 ], OrderBody.prototype, "id_order", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "descripcion", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsInt)(),
+    typeorm_1.Column(),
+    class_validator_1.IsInt(),
     __metadata("design:type", Number)
 ], OrderBody.prototype, "precio", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsInt)(),
+    typeorm_1.Column(),
+    class_validator_1.IsInt(),
     __metadata("design:type", Number)
 ], OrderBody.prototype, "cantidad", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "units", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "reference", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "imagen", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "maduracion", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "nivelMaduracion", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], OrderBody.prototype, "comentarios", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], OrderBody.prototype, "validater", null);
 OrderBody = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], OrderBody);
 exports.OrderBody = OrderBody;

@@ -24,54 +24,54 @@ const class_validator_1 = require("class-validator");
 let ComplementaryUser = class ComplementaryUser extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], ComplementaryUser.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(0, 2),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(0, 2),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "document_type", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(5, 20),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(5, 20),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "document", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "genre", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "autorization", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(1, 100),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(1, 100),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "email", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.Length)(1, 100),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.Length(1, 100),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], ComplementaryUser.prototype, "user_id", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], ComplementaryUser.prototype, "validater", null);
 ComplementaryUser = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], ComplementaryUser);
 exports.ComplementaryUser = ComplementaryUser;

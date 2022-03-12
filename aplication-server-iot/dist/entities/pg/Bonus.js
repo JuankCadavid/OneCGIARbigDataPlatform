@@ -24,56 +24,56 @@ const class_validator_1 = require("class-validator");
 let Bonus = class Bonus extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], Bonus.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Bonus.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsBoolean)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.IsBoolean(),
     __metadata("design:type", Boolean)
 ], Bonus.prototype, "state", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.Min)(1),
-    (0, class_validator_1.Max)(30),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.Min(1),
+    class_validator_1.Max(30),
     __metadata("design:type", Number)
 ], Bonus.prototype, "value", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.MinLength)(5),
-    (0, class_validator_1.MaxLength)(10),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.MinLength(5),
+    class_validator_1.MaxLength(10),
     __metadata("design:type", String)
 ], Bonus.prototype, "code", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsDate)(),
+    typeorm_1.Column(),
+    class_validator_1.IsDate(),
     __metadata("design:type", Date)
 ], Bonus.prototype, "expired_at", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Bonus.prototype, "quantity", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], Bonus.prototype, "validater", null);
 Bonus = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Bonus);
 exports.Bonus = Bonus;

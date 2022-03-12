@@ -8,19 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiligencesController = void 0;
-const diligencesServices_1 = require("../services/diligencesServices");
+const diligencesServices_1 = __importDefault(require("../services/diligencesServices"));
 class DiligencesController {
-    getProducts(req, res) {
+    getActivitiesActives(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const diligencesServices = new diligencesServices_1.DiligencesServices();
             try {
-                const diligences = yield diligencesServices.requestDiligences();
-                return res.json({ diligences });
+                const activities = yield diligencesServices_1.default.requestActivitiesRegistered();
+                return res.json(activities);
             }
             catch (error) {
-                return res.status(404).json({ message: "Products not found " + error });
+                return res
+                    .status(404)
+                    .json({ message: "getActivitiesActives not found " + error });
             }
         });
     }

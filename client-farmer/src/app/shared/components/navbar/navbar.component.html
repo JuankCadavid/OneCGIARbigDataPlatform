@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(7,37,66);border: 0 ">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/sales/products']">
+      <img id="logoNav" src="https://ciat.cgiar.org/wp-content/uploads/Alianza_logos-ESPAÑOL-04.png">
+    </a>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav ml-auto" id="navbarNav" style="margin-left: auto;">
+
+        <div>
+          <li>
+            <button class="btn btn-light" style="margin-bottom: 10px;margin-right: 10px;" routerLink="/login">
+              Inicio
+            </button>
+          </li>
+        </div>
+
+        <li class="nav-item" style="pointer-events: inherit;">
+          <a class="nav-link" routerLink="/recipes" routerLinkActive="active" style="color: white;">
+            <i class="fas fa-cloud-sun-rain"></i> Clima
+
+          </a>
+        </li>
+
+        <li class="nav-item" style="pointer-events: inherit;cursor: pointer;">
+          <a class="nav-link" style="color: white;">
+            <i class="fas fa-tree"></i> Deforestacion</a>
+        </li>
+
+        <div>
+
+        </div>
+
+      </ul>
+
+      
+    </div>
+
+  </div>
+</nav>

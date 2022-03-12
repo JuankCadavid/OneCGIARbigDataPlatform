@@ -1,10 +1,8 @@
 import {Router} from "express";
-import diligences from "./diligences";
-import products from "./products";
+import activities from "./activities";
 
 const Routes = Router();
 
-Routes.use('/products',products);
-Routes.use('/diligences',diligences);
+Routes.use('/activities',activities);
 
 export default Routes;

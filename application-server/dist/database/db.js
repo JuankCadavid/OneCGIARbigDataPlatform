@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -37,7 +41,7 @@ dotenv.config();
  */
 class Database {
     constructor() {
-        this.connectionManager = typeorm_1.getConnectionManager();
+        this.connectionManager = (0, typeorm_1.getConnectionManager)();
     }
     getConnection() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -57,12 +61,12 @@ class Database {
                     type: `postgres`,
                     port: 5432,
                     synchronize: false,
-                    host: 'aliadago.ctwnnpfxxzig.us-east-1.rds.amazonaws.com',
+                    host: 'onecgiarbigdata.ctwnnpfxxzig.us-east-1.rds.amazonaws.com',
                     username: 'postgres',
-                    database: 'postgres',
+                    database: 'bigdata',
                     password: process.env.PASS2,
                     entities: [
-                        __dirname + "/entities/*.*"
+                        "dist/entities/pg/**/*.js"
                     ]
                 };
                 // Don't need a pwd locally
@@ -71,7 +75,7 @@ class Database {
                         password: process.env.DB_PASSWORD
                     });
                 }
-                connection = yield typeorm_1.createConnection(connectionOptions);
+                connection = yield (0, typeorm_1.createConnection)(connectionOptions);
             }
             return connection;
         });

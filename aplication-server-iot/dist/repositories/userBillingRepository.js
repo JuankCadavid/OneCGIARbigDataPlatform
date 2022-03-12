@@ -15,6 +15,6 @@ let UserBillingRepository = class UserBillingRepository extends typeorm_1.Reposi
     }
 };
 UserBillingRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(BillingUser_1.BillingUser)
+    typeorm_1.EntityRepository(BillingUser_1.BillingUser)
 ], UserBillingRepository);
 exports.UserBillingRepository = UserBillingRepository;

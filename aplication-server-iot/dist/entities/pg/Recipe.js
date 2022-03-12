@@ -15,45 +15,45 @@ const class_validator_1 = require("class-validator");
 let Recipe = class Recipe extends typeorm_1.BaseEntity {
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], Recipe.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Recipe.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Recipe.prototype, "ingredients", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    typeorm_1.Column(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], Recipe.prototype, "preparation", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Recipe.prototype, "preparation_time", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Recipe.prototype, "image_url", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Recipe.prototype, "video_url", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Recipe.prototype, "portions", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Recipe.prototype, "difficulty", void 0);
 Recipe = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], Recipe);
 exports.Recipe = Recipe;

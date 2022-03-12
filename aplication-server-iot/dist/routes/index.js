@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const diligences_1 = __importDefault(require("./diligences"));
 const products_1 = __importDefault(require("./products"));
-const Routes = (0, express_1.Router)();
+const Routes = express_1.Router();
 Routes.use('/products', products_1.default);
 Routes.use('/diligences', diligences_1.default);
 exports.default = Routes;

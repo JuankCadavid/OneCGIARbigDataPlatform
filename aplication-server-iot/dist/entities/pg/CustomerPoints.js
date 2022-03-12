@@ -24,31 +24,31 @@ const class_validator_1 = require("class-validator");
 let CustomerPoints = class CustomerPoints extends typeorm_1.BaseEntity {
     validater() {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, class_validator_1.validateOrReject)(this);
+            yield class_validator_1.validateOrReject(this);
         });
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryColumn)(),
+    typeorm_1.PrimaryColumn(),
     __metadata("design:type", Number)
 ], CustomerPoints.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    (0, class_validator_1.IsString)(),
+    typeorm_1.Column(),
+    class_validator_1.IsString(),
     __metadata("design:type", String)
 ], CustomerPoints.prototype, "id_client", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], CustomerPoints.prototype, "points", void 0);
 __decorate([
-    (0, typeorm_1.BeforeInsert)(),
-    (0, typeorm_1.BeforeUpdate)(),
+    typeorm_1.BeforeInsert(),
+    typeorm_1.BeforeUpdate(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CustomerPoints.prototype, "validater", null);
 CustomerPoints = __decorate([
-    (0, typeorm_1.Entity)()
+    typeorm_1.Entity()
 ], CustomerPoints);
 exports.CustomerPoints = CustomerPoints;

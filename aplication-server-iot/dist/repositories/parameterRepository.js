@@ -15,6 +15,6 @@ let ParameterRepository = class ParameterRepository extends typeorm_1.Repository
     }
 };
 ParameterRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(Parameters_1.Parameters)
+    typeorm_1.EntityRepository(Parameters_1.Parameters)
 ], ParameterRepository);
 exports.ParameterRepository = ParameterRepository;

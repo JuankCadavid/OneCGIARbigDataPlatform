@@ -18,6 +18,6 @@ let OrderBodyRepository = class OrderBodyRepository extends typeorm_1.Repository
     }
 };
 OrderBodyRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(orderBody_1.OrderBody)
+    typeorm_1.EntityRepository(orderBody_1.OrderBody)
 ], OrderBodyRepository);
 exports.OrderBodyRepository = OrderBodyRepository;

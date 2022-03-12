@@ -1,12 +1,11 @@
 org: juankcadavid
-app: aliadadelivery
-service: apiAliadaDelivery
-frameworkVersion: '2 || 3'
+app: onecigiarserveriot
+service: app-server-iot
+frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  lambdaHashingVersion: '20201221'
+  runtime: nodejs14.x
 
 functions:
   api:

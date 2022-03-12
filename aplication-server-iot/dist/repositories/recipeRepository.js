@@ -15,6 +15,6 @@ let recipeRepository = class recipeRepository extends typeorm_1.Repository {
     }
 };
 recipeRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(Recipe_1.Recipe)
+    typeorm_1.EntityRepository(Recipe_1.Recipe)
 ], recipeRepository);
 exports.recipeRepository = recipeRepository;

@@ -1,0 +1,94 @@
+<div class="container" style="margin-top: 20px;margin-bottom: 100px;">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <strong>Cantidad de Animales</strong>
+        </div>
+        <div class="card-body">
+          <div>
+            <h5> <strong>Total de animales</strong></h5>
+            <h4>{{totalAnimals}}</h4>
+            <hr>
+            <h5 style="color: red;">En zona deforestada</h5>
+            <div>
+              <div class="row">
+                <div class="col">
+                  <h4>{{totalAnimalsD}}</h4>
+                </div>
+                <div class="col">
+                  <button class="btn btn-info" style="margin-bottom: 10px;margin-right: 10px; color: white;"
+                    (click)='showZone(false)'>
+                    Ver Zona
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <h5 style="color: green;">En Zona apta</h5>
+            <div>
+              <div class="row">
+                <div class="col">
+                  <h4>{{totlaAnimalsA}}</h4>
+                </div>
+                <div class="col">
+                  <button class="btn btn-info" style="margin-bottom: 10px;margin-right: 10px; color: white;"
+                    (click)='showZone(true)'>
+                    Ver Zona
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <strong> Zona {{labelZone}}</strong>
+        </div>
+        <div class="card-body" style="height: 300px;">
+          <div class="col-md-6" id="mainMap">
+
+            <div class="map-container">
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [restriction]="countryRestriction">
+
+
+                <agm-marker *ngFor="let m of animalMarker; let i = index" (markerClick)="clickedMarker(m.status, i)"
+                  [latitude]="m.lat" [longitude]="m.lng" [label]="m.status" [markerDraggable]="true"
+                  (dragEnd)="markerDragEnd(m, $event)">
+
+                  <agm-info-window>
+                    <strong>A: {{m.status}}</strong><br>
+                  </agm-info-window>
+
+                </agm-marker>
+              </agm-map>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          Estadisticas
+        </div>
+        <div class="card-body">
+
+          <iframe height="600" style="width: 100%;"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZjcxMjFjODgtNGQ2My00NjgzLWE1NDgtODIzYTc3NmNlMTQ0IiwidCI6ImY5OTE4YWEwLWJlYTgtNDQ4ZS04NzIyLWJkNTYyYjZmOWVjMiJ9"
+            frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
