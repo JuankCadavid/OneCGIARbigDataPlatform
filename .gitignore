@@ -1,0 +1,17 @@
+/client-farmer/dist/*
+/client-research/dist/*
+/todo.txt
+/one-cgiar-front/src/proxy.conf.json
+/submission-data.txt
+/submission-request-test.http
+/application-server/.env
+/application-server/src/config/config.ts
+/application-server/ormconfig.json
+/application-server/node_modules
+/application-server/docs/DB
+/aplication-server-iot/.env
+/aplication-server-iot/src/config/config.ts
+/aplication-server-iot/ormconfig.json
+/aplication-server-iot/node_modules
+/aplication-server-iot/docs/DB
+/package-lock.json
