@@ -23,11 +23,15 @@ class DiligencesServices {
       await queryRunner.connect();
 
       const activities = await queryRunner.query(`
-      SELECT * FROM activities`);
+      SELECT a.id,c.name as crop_name,a.activity_id,a.detail,a.activity_date 
+        FROM activities a
+        JOIN crops c
+          on a.crops_id = c.id
+        WHERE a.status = true`);
 
       await queryRunner.release();
 
-      return { activities };
+      return activities;
     } catch (error) {
       return { message: "Activities Registered" + error };
     }

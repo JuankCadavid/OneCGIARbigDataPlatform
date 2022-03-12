@@ -14,8 +14,8 @@ export class WeatherComponent implements OnInit {
 	lng: number;
 	zoom:number;
 
-	animalMarker: animalsMarker[];
-	totalAnimals: number;
+	activities: any[];
+	totalActivities: number;
 	totlaAnimalsA: number = 0;
 	totalAnimalsD: number = 0;
 	countryRestriction: any;
@@ -35,17 +35,22 @@ export class WeatherComponent implements OnInit {
 	getAnimalsMarker() {
 		this.weatherservice.getAnimals().subscribe(
 			(res: any) => {
-				this.animalMarker = res.animals;
 
-				for (let index = 0; index < this.animalMarker.length; index++) {
-					const status = this.animalMarker[index].status;
-					this.totalAnimals = index + 1;
+				console.log(res);
+				
 
-					if (status == 'A') {
-						this.totlaAnimalsA++;
-					} else if (status == 'D') {
-						this.totalAnimalsD++;
-					}
+				this.activities = res;
+
+				console.log(this.activities);
+				
+
+				for (let index = 0; index < this.activities.length; index++) {
+					const status = this.activities[index].status;
+					this.totalActivities = index + 1;
+
+					console.log(index);
+					
+
 				}
 			},
 			(err) => console.error(err)

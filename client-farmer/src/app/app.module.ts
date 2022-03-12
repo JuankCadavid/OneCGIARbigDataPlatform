@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {TableModule} from 'primeng/table';
 
 //angular google maps
 import { AgmCoreModule } from '@agm/core';

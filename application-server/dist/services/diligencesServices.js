@@ -27,9 +27,13 @@ class DiligencesServices {
                 const queryRunner = dbConn.createQueryRunner();
                 yield queryRunner.connect();
                 const activities = yield queryRunner.query(`
-      SELECT * FROM activities`);
+      SELECT a.id,c.name as crop_name,a.activity_id,a.detail,a.activity_date 
+        FROM activities a
+        JOIN crops c
+          on a.crops_id = c.id
+        WHERE a.status = true`);
                 yield queryRunner.release();
-                return { activities };
+                return activities;
             }
             catch (error) {
                 return { message: "Activities Registered" + error };

@@ -3,73 +3,34 @@
     <div class="col">
       <div class="card">
         <div class="card-header">
-          <strong>Cantidad de Animales</strong>
+         <h3><strong>Activities</strong></h3> 
         </div>
         <div class="card-body">
           <div>
-            <h5> <strong>Total de animales</strong></h5>
-            <h4>{{totalAnimals}}</h4>
+            <h5> <strong>Total number of registered activities</strong></h5>
+            <h4>{{totalActivities}}</h4>
             <hr>
-            <h5 style="color: red;">En zona deforestada</h5>
-            <div>
-              <div class="row">
-                <div class="col">
-                  <h4>{{totalAnimalsD}}</h4>
-                </div>
-                <div class="col">
-                  <button class="btn btn-info" style="margin-bottom: 10px;margin-right: 10px; color: white;"
-                    (click)='showZone(false)'>
-                    Ver Zona
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <hr>
-            <h5 style="color: green;">En Zona apta</h5>
-            <div>
-              <div class="row">
-                <div class="col">
-                  <h4>{{totlaAnimalsA}}</h4>
-                </div>
-                <div class="col">
-                  <button class="btn btn-info" style="margin-bottom: 10px;margin-right: 10px; color: white;"
-                    (click)='showZone(true)'>
-                    Ver Zona
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-header">
-          <strong> Zona {{labelZone}}</strong>
-        </div>
-        <div class="card-body" style="height: 300px;">
-          <div class="col-md-6" id="mainMap">
-
-            <div class="map-container">
-              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [restriction]="countryRestriction">
-
-
-                <agm-marker *ngFor="let m of animalMarker; let i = index" (markerClick)="clickedMarker(m.status, i)"
-                  [latitude]="m.lat" [longitude]="m.lng" [label]="m.status" [markerDraggable]="true"
-                  (dragEnd)="markerDragEnd(m, $event)">
-
-                  <agm-info-window>
-                    <strong>A: {{m.status}}</strong><br>
-                  </agm-info-window>
-
-                </agm-marker>
-              </agm-map>
-            </div>
-
+            <h5 style="color: black;">Activities Table</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Crops</th>
+                  <th scope="col">Activity Type</th>
+                  <th scope="col">Detail</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let activity of activities">
+                <tr>
+                  <th scope="row">{{activity.id}}</th>
+                  <td>{{activity.crop_name}}</td>
+                  <td>{{activity.activity_id}}</td>
+                  <td>{{activity.detail}}</td>
+                  <td>{{activity.activity_date  | date:'medium' }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -87,6 +48,27 @@
           <iframe height="600" style="width: 100%;"
             src="https://app.powerbi.com/view?r=eyJrIjoiZjcxMjFjODgtNGQ2My00NjgzLWE1NDgtODIzYTc3NmNlMTQ0IiwidCI6ImY5OTE4YWEwLWJlYTgtNDQ4ZS04NzIyLWJkNTYyYjZmOWVjMiJ9"
             frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-top: 20px;">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          Project description
+        </div>
+        <div class="card-body">
+
+          <p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'>The development of the solution is designed to meet the non-functional requirements detailed in number 1.2.2. and to be able to meet the standards expected by the stakeholder.</p>
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'>Based on the above, the solution will have 3 main architectural patterns that will be detailed below:</p>
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'><strong>1. Microservices:</strong> This architecture will be immersed in the entire application and will allow us to separate different functionalities that it must fulfill.</p>
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'>In the application you can find two backend servers, two frontend servers, an ETL system, a BI system and two Databases. The application will be distributed in each of these, decoupling various functionalities into independent parts.</p>
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'><strong>2. Clean Architecture:</strong> This architectural pattern will be present in the backend of the microservices and will allow us to separate the framework from the business logic and will allow us to have independence from the data model.</p>
+<p style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;margin-left:0in;line-height:115%;font-size:13px;font-family:"Calibri",sans-serif;text-align:justify;'><strong>3. Model View Controller (MVC):</strong> This architectural pattern will be present in the microservices of the application front since the framework that is going to be used is Angular.</p>
+
         </div>
       </div>
     </div>

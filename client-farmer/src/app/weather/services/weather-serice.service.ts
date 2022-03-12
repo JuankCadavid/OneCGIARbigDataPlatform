@@ -19,7 +19,7 @@ export class WeatherSericeService {
 
   getAnimals(): Observable<any> {
 
-    return this.http.get(`${this.API_URI}animals/` );
+    return this.http.get(`${this.API_URI}activities/registered/` );
 
   }
 
