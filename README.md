@@ -1,1 +1,1 @@
-# OneCGIARbigDataPlatform
+# One CGIAR Big DataPlatform
